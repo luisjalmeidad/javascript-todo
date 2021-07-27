@@ -5,6 +5,7 @@ import { todoList } from '../index';
 
 const divTodoList   = document.querySelector('.todo-list');
 const txtInput      = document.querySelector('.new-todo');
+const btnBorrar     = document.querySelector('.clear-completed');
 
 
 export const crearTodoHtml = ( todo ) => {
@@ -58,6 +59,7 @@ divTodoList.addEventListener('click', (event) =>{
     const todoElement       = event.target.parentElement.parentElement; // Encuentro al (li) del html 
     const todoId            = todoElement.getAttribute('data-id'); // obtengo el ID del (li) del html
 
+    
     if (  nombreElemento.includes('input')  ){ // Clic en el check
 
         todoList.marcarCompletado( todoId );
@@ -67,10 +69,28 @@ divTodoList.addEventListener('click', (event) =>{
     } else if(  nombreElemento.includes('button')  ) {
 
         todoList.eliminarTodo( todoId );
-        
+
         divTodoList.removeChild( todoElement );
         
     }
 
 
+})
+
+btnBorrar.addEventListener('click', () => {
+
+    todoList.eliminarCompletados();
+
+    for (  let i = divTodoList.children.length-1; i>0; i--  ){
+
+            const elemento = divTodoList.children[i];
+
+            if (  elemento.classList.contains('completed') ){
+                    
+                divTodoList.removeChild( elemento );
+
+
+            }
+
+    }
 })
