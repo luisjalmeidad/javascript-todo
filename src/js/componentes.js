@@ -54,20 +54,23 @@ txtInput.addEventListener('keyup', ( event ) => {
 divTodoList.addEventListener('click', (event) =>{
 
 
- /*   const nombreElemento    = event.target.localName; // Devuelve la etiqueta HTML que es presionada con un clic (button, label, input)
+    const nombreElemento    = event.target.localName; // Devuelve la etiqueta HTML que es presionada con un clic (button, label, input)
     const todoElement       = event.target.parentElement.parentElement; // Encuentro al (li) del html 
     const todoId            = todoElement.getAttribute('data-id'); // obtengo el ID del (li) del html
 
     if (  nombreElemento.includes('input')  ){ // Clic en el check
+
         todoList.marcarCompletado( todoId );
+
         todoElement.classList.toggle('completed');
-    }/* else if(  nombreElemento.includes('button')  ) {
+
+    } else if(  nombreElemento.includes('button')  ) {
 
         todoList.eliminarTodo( todoId );
+        
         divTodoList.removeChild( todoElement );
-
-        console.log(todoElement.firstElementChild);
-    }*/
+        
+    }
 
 
 })
