@@ -1,19 +1,22 @@
-import { saludar } from './js/componentes.js';
 import './style.css';
 
-// import webpacklogo from './assets/img/webpack-logo.png';
+import { Todo, TodoList } from './classes';
+import { crearTodoHtml } from './js/componentes';
 
-const nombre = 'Luis';
 
-saludar( nombre );
 
-// const imprimir = () => {
-//     //img
-//     console.log(webpacklogo);
-//     const img = document.createElement('img');
-//     img.src = webpacklogo;
-//     document.body.append( img );
+export const todoList = new TodoList('Aprender JavaScript');
 
-// };
+const tarea = new Todo('Aprender JavaScript');
+// const tarea2 = new Todo('Aprender TypeScript');
 
-// imprimir();
+todoList.nuevoTodo( tarea );
+// todoList.nuevoTodo( tarea2 );
+
+// tarea.completado = true;
+
+
+console.log( todoList );
+
+crearTodoHtml( tarea ); 
+
