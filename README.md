@@ -1,7 +1,7 @@
- # Webpack Starter
+ # Aplicación para manejar el todo
 
- Este es el proyecto inicial para crear
- aplicaciones utilizando webpack.
+ Esta aplicación se desarrollo con las clases de 
+ Fernando Herrera en el curso JavaScript Moderno de Udemy.
 
  ### Notas:
 
